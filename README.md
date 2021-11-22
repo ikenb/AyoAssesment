@@ -1,6 +1,7 @@
 # AyoAssesment
 
-Setup Steps
+
+Setup Steps view the Wiki here https://github.com/ikenb/AyoAssesment/wiki
 
 -Clone the app
 -Rebuild the solution
