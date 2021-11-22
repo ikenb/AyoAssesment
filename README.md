@@ -84,22 +84,21 @@ INSERT INTO [dbo].[Length]
 GO
 
 Run the below script against the newly created Metric Db to create the stored procedure "GetFormula"
+USE [Metric] GO
 
-USE Metric
-GO
+INSERT INTO [dbo].[Length] ([Unit] ,[FormulaId]) VALUES('mm',1), ('cm',2), ('m',3), ('km',4) GO
 
-CREATE PROCEDURE dbo.Getformula
-@converstionName nvarchar(30)
+Run the below script against the newly created Metric Db to create the stored procedure "GetFormula"
+
+USE Metric GO
+
+CREATE PROCEDURE dbo.Getformula @converstionName nvarchar(30)
 
 Declare @converstionName nvarchar(30) ='mm to cm'
 
---AS
-SELECT Syntax
-FROM Formuae
-WHERE [Name] = @converstionName
+--AS SELECT Syntax FROM Formuae WHERE [Name] = @converstionName
 
 GO
-
 
 
 
