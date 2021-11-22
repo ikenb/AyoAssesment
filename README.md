@@ -93,10 +93,10 @@ Run the below script against the newly created Metric Db to create the stored pr
 USE Metric GO
 
 CREATE PROCEDURE dbo.Getformula @converstionName nvarchar(30)
-
-Declare @converstionName nvarchar(30) ='mm to cm'
-
---AS SELECT Syntax FROM Formuae WHERE [Name] = @converstionName
+AS 
+SELECT Syntax 
+FROM Formuae 
+WHERE [Name] = @converstionName
 
 GO
 
