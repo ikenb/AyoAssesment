@@ -24,7 +24,9 @@ namespace ConvertMetricUnits.API.Controllers
             if (amount == 0)
                 return NotFound();
 
-            return Ok(_repository.ConvertLength(from, to, amount));
+            var test = _repository.ConvertLengthAsync(from, to, amount);
+
+            return Ok(test);
         }
     }
 }

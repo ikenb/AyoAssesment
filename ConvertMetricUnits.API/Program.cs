@@ -2,7 +2,7 @@ using ConvertMetricUnits.Core.Repository;
 using ConvertMetricUnits.Core.Repository.Interfaces;
 using ConvertMetricUnits.Data;
 using Microsoft.EntityFrameworkCore;
-
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +20,13 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<ConvertMetricDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")));
+
+    builder.Services.AddStackExchangeRedisCache(options =>
+    {
+        options.Configuration = builder.Configuration.GetConnectionString("Redis");
+        options.InstanceName = "RedisMetricDb";
+    });
+
 
 builder.Services.AddScoped<ILengthRepository, LengthRepository>();
 builder.Services.AddScoped<IWeightRepository, WeightRepository>();
