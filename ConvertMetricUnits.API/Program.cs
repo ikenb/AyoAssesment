@@ -2,7 +2,8 @@ using ConvertMetricUnits.Core.Repository;
 using ConvertMetricUnits.Core.Repository.Interfaces;
 using ConvertMetricUnits.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
+using AutoMapper;
+using ConvertMetricUnits.Data.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,7 @@ builder.Services.AddDbContext<ConvertMetricDbContext>(options => options.UseSqlS
     });
 
 
+builder.Services.AddAutoMapper(typeof(DtoMapper));
 builder.Services.AddScoped<ILengthRepository, LengthRepository>();
 builder.Services.AddScoped<IWeightRepository, WeightRepository>();
 builder.Services.AddScoped<ITemparatureRepository, TemparatureRepository>();

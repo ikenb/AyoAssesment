@@ -1,10 +1,12 @@
 using ConvertMetricUnits.Core.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class TemparatureController : ControllerBase
     {
         private ITemparatureRepository _repository;

@@ -1,10 +1,12 @@
 using ConvertMetricUnits.Core.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class WeightController : ControllerBase
     {
         private IWeightRepository _repository;
