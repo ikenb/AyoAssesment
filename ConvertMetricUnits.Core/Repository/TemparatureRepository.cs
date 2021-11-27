@@ -1,9 +1,11 @@
 ﻿using ConvertMetricUnits.Core.Helpers;
 using ConvertMetricUnits.Core.Repository.Interfaces;
-using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Data.SqlClient;
+using Dapper;
+
+
 using System.Data;
 
 namespace ConvertMetricUnits.Core.Repository

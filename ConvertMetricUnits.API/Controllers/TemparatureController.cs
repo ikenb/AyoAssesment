@@ -1,3 +1,4 @@
+using AutoMapper;
 using ConvertMetricUnits.Core.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -5,16 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/Temparture")]
     [Authorize]
     public class TemparatureController : ControllerBase
     {
         private ITemparatureRepository _repository;
-        private readonly ILogger<TemparatureController> _logger;
-
         public TemparatureController (ILogger<TemparatureController> logger, ITemparatureRepository repository)
         {
-            _logger = logger;
             _repository = repository;
         }
 

@@ -14,5 +14,6 @@ namespace ConvertMetricUnits.Data
         public DbSet<Length> Length { get; set; }
         public DbSet<Weight> Weight { get; set; }
         public DbSet<Temparature> Temparature { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

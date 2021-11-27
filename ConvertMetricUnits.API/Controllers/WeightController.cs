@@ -1,3 +1,4 @@
+using AutoMapper;
 using ConvertMetricUnits.Core.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,9 @@ namespace ConvertMetricUnits.API.Controllers
     public class WeightController : ControllerBase
     {
         private IWeightRepository _repository;
-        private readonly ILogger<WeightController> _logger;
 
         public WeightController(ILogger<WeightController> logger, IWeightRepository repository)
         {
-            _logger = logger;
             _repository = repository;
         }
 

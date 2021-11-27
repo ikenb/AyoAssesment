@@ -17,6 +17,7 @@ namespace ConvertMetricUnits.Data.Mappings
             CreateMap<Length, LengthDto>().ReverseMap();
             CreateMap<Temparature, TemparatureDto>().ReverseMap();
             CreateMap<Weight, WeightDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
         }
     }
 }
