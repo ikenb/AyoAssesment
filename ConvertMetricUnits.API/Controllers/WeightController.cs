@@ -13,7 +13,7 @@ namespace ConvertMetricUnits.API.Controllers
     {
         private IWeightRepository _repository;
 
-        public WeightController(ILogger<WeightController> logger, IWeightRepository repository)
+        public WeightController(IWeightRepository repository)
         {
             _repository = repository;
         }

@@ -12,7 +12,7 @@ namespace ConvertMetricUnits.API.Controllers
     public class TemparatureController : ControllerBase
     {
         private ITemparatureRepository _repository;
-        public TemparatureController (ILogger<TemparatureController> logger, ITemparatureRepository repository)
+        public TemparatureController (ITemparatureRepository repository)
         {
             _repository = repository;
         }

@@ -32,6 +32,7 @@ namespace ConvertMetricUnits.API.Controllers
                 return BadRequest(new { message = "Username or password is incorrect" });
             }
 
+            //TODO:Log Usage
             return Ok(_mapper.Map<User>(user));
         }
 
@@ -52,6 +53,7 @@ namespace ConvertMetricUnits.API.Controllers
                 return BadRequest(new { message = "Error while registering" });
             }
 
+            //TODO:Log Usage
             return Ok(_mapper.Map<User>(user));
         }
     }

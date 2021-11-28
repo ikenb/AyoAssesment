@@ -8,12 +8,7 @@ namespace ConvertMetricUnits.Core.Tests.Helpers
     [TestClass]
     public class MetricConveterTests
     {
-        [TestInitialize]
-        public void SetUp()
-        {
-
-        }
-
+      
         [TestMethod]
         public void ComputeMetric_GivenVariableAndValidFormula_ComputeTheResults()
         {

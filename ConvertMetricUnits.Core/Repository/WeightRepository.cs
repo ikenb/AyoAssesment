@@ -8,8 +8,6 @@ using System.Data;
 
 namespace ConvertMetricUnits.Core.Repository
 {
-
-
     public class WeightRepository : IWeightRepository
     {
         private readonly IDbConnection _db;
@@ -29,7 +27,7 @@ namespace ConvertMetricUnits.Core.Repository
 
             if (string.IsNullOrEmpty(_cache.GetString(recordKey)))
             {
-                formula = _db.Query<string>("Getformula", parameter, commandType: CommandType.StoredProcedure).ToList().FirstOrDefault();
+                formula = GetWeightFormula(parameter);
 
                 _cache.SetString(recordKey, formula);
             }
@@ -40,6 +38,20 @@ namespace ConvertMetricUnits.Core.Repository
 
             return MetricConverter.ComputeMetric(from, amount, formula);
 
-        } 
+        }
+
+        public string GetWeightFormula(DynamicParameters parameter)
+        {
+            try
+            {
+                return _db.Query<string>("Getformula", parameter, commandType: CommandType.StoredProcedure).ToList().FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                //TODO:Log Error
+                throw new ExecutionEngineException("Execution failed " + e.Message);
+            }
+
+        }
     }
 }

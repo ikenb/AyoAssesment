@@ -2,6 +2,6 @@
 {
     public interface ILengthRepository
     {
-        double ConvertLengthAsync(string from, string to, double amount);
+        double ConvertLength(string from, string to, double amount);
     }
 }

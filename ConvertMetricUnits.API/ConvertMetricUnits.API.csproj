@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ConvertMetricUnits.Core\ConvertMetricUnits.Core.csproj" />
     <ProjectReference Include="..\ConvertMetricUnits.Data\ConvertMetricUnits.Data.csproj" />
+    <ProjectReference Include="..\Services\ConvertMetricUnits.Logger\LoggerService.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,6 +10,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Mvc;
+using LoggerService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,7 @@ builder.Services.AddAutoMapper(typeof(DtoMapper));
 builder.Services.AddScoped<ILengthRepository, LengthRepository>();
 builder.Services.AddScoped<IWeightRepository, WeightRepository>();
 builder.Services.AddScoped<ITemparatureRepository, TemparatureRepository>();
+
 
 builder.Services.AddControllers();
 

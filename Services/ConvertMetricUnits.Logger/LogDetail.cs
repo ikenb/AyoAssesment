@@ -1,6 +1,8 @@
-﻿namespace LoggerService.Logger
+﻿using LoggerService.Interfaces;
+
+namespace LoggerService
 {
-    public class LogDetail
+    public class LogDetail:ILogDetail
     {
         public DateTime Timestamp { get; set; }
         public string? Message { get; set; }  

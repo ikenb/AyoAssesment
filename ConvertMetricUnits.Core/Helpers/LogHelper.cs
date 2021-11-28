@@ -1,9 +1,16 @@
-﻿using LoggerService.Logger;
+﻿using LoggerService;
+using LoggerService.Interfaces;
 
 namespace ConvertMetricUnits.Core.Helpers
 {
     public static class LogHelper
     {
+        private static readonly ILogger logger;
+
+         static LogHelper()
+        {
+             logger = new Logger();
+        }
         public static void LogUsage(string userId, string userName)
         {
             var usageInfo = new LogDetail()
@@ -15,7 +22,7 @@ namespace ConvertMetricUnits.Core.Helpers
                        
             };
 
-            Logger.WriteUsageLogs(usageInfo);
+            logger.WriteLogs(usageInfo);
         }
           
 
@@ -29,7 +36,7 @@ namespace ConvertMetricUnits.Core.Helpers
 
             };
 
-            Logger.WriteErrorLogs(errorInfo);
+            logger.WriteLogs(errorInfo);
         }
 
 
