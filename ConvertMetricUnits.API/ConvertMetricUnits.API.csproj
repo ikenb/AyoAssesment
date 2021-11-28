@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ConvertMetricUnits.Core\ConvertMetricUnits.Core.csproj" />
     <ProjectReference Include="..\ConvertMetricUnits.Data\ConvertMetricUnits.Data.csproj" />
+    <ProjectReference Include="..\Services\ConvertMetricUnits.Logger\LoggerService.csproj" />
   </ItemGroup>
 
 </Project>

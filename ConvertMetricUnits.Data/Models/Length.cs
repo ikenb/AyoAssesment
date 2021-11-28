@@ -11,6 +11,7 @@ namespace ConvertMetricUnits.Data.Models
         [Required]
         public int FormulaId { get; set; }
         public Formula? Formula { get; set; }
+       
 
     }
 }

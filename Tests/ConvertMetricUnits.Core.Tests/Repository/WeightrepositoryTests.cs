@@ -1,21 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConvertMetricUnits.Core.Repository.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace ConvertMetricUnits.Core.Tests.Repository
 {
     [TestClass]
-    public class WeightrepositoryTests
+    public class WeightRepositoryTests
     {
-
-        [TestInitialize]
-        public void SetUp()
-        {
-
-        }
-
-        [TestMethod]
-        public void MyTestMethod()
-        {
-
-        }
     }
 }

@@ -1,30 +1,34 @@
+using AutoMapper;
+using ConvertMetricUnits.Core.Helpers;
 using ConvertMetricUnits.Core.Repository.Interfaces;
+using ConvertMetricUnits.Data.Models.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/length")]
+    [Authorize]
     public class LengthController : ControllerBase
     {
-        private ILengthRepository _repository;
+        private readonly ILengthRepository _repository;
 
-        private readonly ILogger<LengthController> _logger;
-
-        public LengthController(ILogger<LengthController> logger, ILengthRepository repository)
+        public LengthController(ILengthRepository repository)
         {
-            _logger = logger;
             _repository = repository;
-    }
+        }
 
-    
-        [HttpGet("{from}/{to}/{amount}", Name = "GetLength")]
-        public IActionResult GetLength(string from, string to, int amount)
+
+        [HttpGet("getlength")]
+        public IActionResult GetLength([FromBody] LengthDto lengthDto)
         {
-            if (amount == 0)
+
+            if (lengthDto.Amount == 0)
                 return NotFound();
 
-            return Ok(_repository.ConvertLength(from, to, amount));
+            return Ok(_repository.ConvertLengthAsync(lengthDto.From, lengthDto.To, lengthDto.Amount));
+
         }
     }
 }

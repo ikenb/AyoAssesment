@@ -9,10 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Jace" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.88" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ConvertMetricUnits.Data\ConvertMetricUnits.Data.csproj" />
+    <ProjectReference Include="..\Services\ConvertMetricUnits.Logger\LoggerService.csproj" />
   </ItemGroup>
 
 </Project>
