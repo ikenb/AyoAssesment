@@ -1,4 +1,5 @@
-﻿using ConvertMetric.Web.Models;
+﻿using ConvertMetric.Web.HttpRepository.Interfaces;
+using ConvertMetric.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,11 +7,18 @@ namespace ConvertMetric.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+  
+        private readonly ILengthRepository _lengthRepository;
+        private readonly ITemparatureRepository _temparatureRepository;
+        private readonly IWeightRepository _weightRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILengthRepository lengthRepository,
+            ITemparatureRepository temparatureRepository, 
+            IWeightRepository weightRepository)
         {
-            _logger = logger;
+            _lengthRepository = lengthRepository;
+            _temparatureRepository = temparatureRepository;
+            _weightRepository = weightRepository;
         }
 
         public IActionResult Index()

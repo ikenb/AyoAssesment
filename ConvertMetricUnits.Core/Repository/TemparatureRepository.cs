@@ -20,7 +20,7 @@ namespace ConvertMetricUnits.Core.Repository
             _db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
             _cache = cache;
         }
-        public double ConvertTemparature(string from , string to, int amount)
+        public double ConvertTemparature(string from , string to, double amount)
         {
             var converstionName = string.Concat(from, " to ", to);
             var parameter = DapperParameter.BuildDapperParameters(converstionName);

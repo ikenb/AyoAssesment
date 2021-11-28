@@ -1,5 +1,6 @@
 using AutoMapper;
 using ConvertMetricUnits.Core.Repository.Interfaces;
+using ConvertMetricUnits.Data.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,13 +18,13 @@ namespace ConvertMetricUnits.API.Controllers
         }
 
 
-        [HttpGet("{from}/{to}/{amount}", Name = "GetTemparature")]
-        public IActionResult GetTemparature(string from, string to, int amount)
+        [HttpGet("getTemparature")]
+        public IActionResult GetTemparature([FromBody] TemparatureDto temparatureDto)
         {
-            if (amount == 0)
+            if (temparatureDto.Amount == 0)
                 return NotFound();
 
-            return Ok(_repository.ConvertTemparature(from, to, amount));
+            return Ok(_repository.ConvertTemparature(temparatureDto.From, temparatureDto.To, temparatureDto.Amount));
         }
     }
 }

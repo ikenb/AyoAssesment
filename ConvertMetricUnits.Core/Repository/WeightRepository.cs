@@ -19,7 +19,7 @@ namespace ConvertMetricUnits.Core.Repository
             _db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
             _cache = cache;
         }
-        public double ConvertWeight(string from, string to, int amount)
+        public double ConvertWeight(string from, string to, double amount)
         {
             var converstionName = string.Concat(from, " to ", to);
             var parameter = DapperParameter.BuildDapperParameters(converstionName);

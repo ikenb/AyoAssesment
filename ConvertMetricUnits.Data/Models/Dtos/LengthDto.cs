@@ -1,11 +1,9 @@
 ﻿namespace ConvertMetricUnits.Data.Models.Dtos
 {
-    internal class LengthDto
+    public class LengthDto
     {
-        public int Id { get; set; }
- 
-        public string? Unit { get; set; }
-      
-        public Formula? Formula { get; set; }
+        public string? From { get; set; }
+        public string? To { get; set; }
+        public double Amount { get; set; }
     }
 }

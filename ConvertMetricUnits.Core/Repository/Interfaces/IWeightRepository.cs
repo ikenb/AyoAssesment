@@ -2,6 +2,6 @@
 {
     public interface IWeightRepository
     {
-        double ConvertWeight(string from, string to, int amount);
+        double ConvertWeight(string from, string to, double amount);
     }
 }

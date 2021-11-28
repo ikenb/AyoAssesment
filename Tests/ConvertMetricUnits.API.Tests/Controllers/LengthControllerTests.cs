@@ -30,12 +30,12 @@ namespace ConvertMetricUnits.API.Tests.Controllers
         //    Assert.AreEqual(result.GetType(), typeof<NotFound>);
         //}
 
-        [TestMethod]
-        public void GetLength_WhenAmountValueIsNotZero_ReturnOk()
-        {
-            var result = _lengthController.GetLength("cm", "mm", 2);
+        //[TestMethod]
+        //public void GetLength_WhenAmountValueIsNotZero_ReturnOk()
+        //{
+        //    var result = _lengthController.GetLength("cm", "mm", 2);
 
-            Assert.IsNotNull(result);
-        }
+        //    Assert.IsNotNull(result);
+        //}
     }
 }

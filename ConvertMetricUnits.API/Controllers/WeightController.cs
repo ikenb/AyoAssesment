@@ -1,5 +1,6 @@
 using AutoMapper;
 using ConvertMetricUnits.Core.Repository.Interfaces;
+using ConvertMetricUnits.Data.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,13 +18,13 @@ namespace ConvertMetricUnits.API.Controllers
             _repository = repository;
         }
 
-        [HttpGet("{from}/{to}/{amount}", Name = "GetWeight")]
-        public IActionResult GetWeight(string from, string to, int amount)
+        [HttpGet("getWeight")]
+        public IActionResult GetWeight([FromBody] WeightDto weightDto)
         {
-            if (amount == 0)
+            if (weightDto.Amount == 0)
                 return NotFound();
 
-            return Ok(_repository.ConvertWeight(from, to, amount));
+            return Ok(_repository.ConvertWeight(weightDto.From, weightDto.To, weightDto.Amount));
         }
     }
 }

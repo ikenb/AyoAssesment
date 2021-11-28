@@ -4,7 +4,7 @@ namespace ConvertMetricUnits.Core.Helpers
 {
     public class MetricConverter
     {
-        public static double ComputeMetric(string fromValueVariable, int toValueAmount, string formula)
+        public static double ComputeMetric(string fromValueVariable, double toValueAmount, string formula)
         {
             try
             {
