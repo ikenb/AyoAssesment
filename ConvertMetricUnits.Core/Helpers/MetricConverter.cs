@@ -17,6 +17,7 @@ namespace ConvertMetricUnits.Core.Helpers
             }
             catch (Exception e)
             {
+                LogHelper.LogErrors(e);
                 throw new Exception(e.Message);
             }
            

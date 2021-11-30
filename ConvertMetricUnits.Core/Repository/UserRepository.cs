@@ -20,10 +20,11 @@ namespace ConvertMetricUnits.Core.Repository
         private readonly IDbConnection _db;
         private readonly IDistributedCache _cache;
         private readonly JWTSettings _jwtSettings;
-        public UserRepository(IConfiguration configuration, IDistributedCache cache, IOptions<JWTSettings> appsettings)
+        public UserRepository(IConfiguration configuration, IDistributedCache cache, IOptions<JWTSettings> jwtSettings)
         {
             _db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
             _cache = cache;
+            _jwtSettings = jwtSettings.Value;
         }
         public User Authenticate(string userName, string password)
         {
@@ -32,7 +33,7 @@ namespace ConvertMetricUnits.Core.Repository
 
             if (user == null)
             {
-                return null;
+                return null;//TODO: Add null object Design pattern
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -55,7 +56,6 @@ namespace ConvertMetricUnits.Core.Repository
             return user;
         }
 
-     
         public User Register(string username, string password, string role)
         {
             var encryptedpassword = EncryptPassword(password);

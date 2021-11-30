@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/Weight")]
     [Authorize]
     public class WeightController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace ConvertMetricUnits.API.Controllers
             _repository = repository;
         }
 
-        [HttpGet("getWeight")]
+        [HttpGet("GetWeight")]
         public IActionResult GetWeight([FromBody] WeightDto weightDto)
         {
             if (weightDto.Amount == 0)

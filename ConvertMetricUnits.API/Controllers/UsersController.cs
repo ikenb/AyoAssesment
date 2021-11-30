@@ -27,12 +27,14 @@ namespace ConvertMetricUnits.API.Controllers
         {
             var user = _repository.Authenticate(userDto.Username, userDto.Password);
             
-            if (user == null)
-            {
-                return BadRequest(new { message = "Username or password is incorrect" });
-            }
+            if (user == null) 
+                return BadRequest(new { message = "Username or password is incorrect" });   
+            else
+                LogHelper.LogUsage(user.Username);
+            
 
-            //TODO:Log Usage
+           
+
             return Ok(_mapper.Map<User>(user));
         }
 
@@ -43,9 +45,10 @@ namespace ConvertMetricUnits.API.Controllers
             bool isUniqueUser = _repository.IsUniqueUser(userDto.Username);
 
             if (!isUniqueUser)
-            {
                 return BadRequest(new { message = "Username already exists" });
-            }
+            else
+                LogHelper.LogUsage(userDto.Username);
+            
             var user = _repository.Register(userDto.Username, userDto.Password, userDto.Role);
 
             if (user == null)
@@ -53,7 +56,6 @@ namespace ConvertMetricUnits.API.Controllers
                 return BadRequest(new { message = "Error while registering" });
             }
 
-            //TODO:Log Usage
             return Ok(_mapper.Map<User>(user));
         }
     }

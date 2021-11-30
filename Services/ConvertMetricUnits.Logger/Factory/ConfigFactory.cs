@@ -1,10 +1,13 @@
 ﻿using LoggerService.Enums;
 using Serilog;
+using Serilog.Events;
+using System.Diagnostics;
 
 namespace LoggerService.Factory
 {
     public static class ConfigFactory
     {
+        
         public static Serilog.Core.Logger GetLogType(LogType logType)
         {
             switch (logType)

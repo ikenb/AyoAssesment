@@ -50,8 +50,8 @@ namespace ConvertMetricUnits.Core.Repository
             }
             catch (Exception e)
             {
-                //TODO:Log Error
-                throw new ExecutionEngineException("Execution failed " + e.Message);
+                LogHelper.LogErrors(e);
+                return string.Empty;
             }
 
         }
