@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
-    [Route("api/v{version:apiVersion}/length")]
+    [Route("api/v{version:apiVersion}/Length")]
     [Authorize]
     public class LengthController : ControllerBase
     {
@@ -20,14 +20,14 @@ namespace ConvertMetricUnits.API.Controllers
         }
 
 
-        [HttpGet("getlength")]
+        [HttpGet("GetLength")]
         public IActionResult GetLength([FromBody] LengthDto lengthDto)
         {
 
             if (lengthDto.Amount == 0)
                 return NotFound();
 
-            return Ok(_repository.ConvertLengthAsync(lengthDto.From, lengthDto.To, lengthDto.Amount));
+            return Ok(_repository.ConvertLength(lengthDto.From, lengthDto.To, lengthDto.Amount));
 
         }
     }

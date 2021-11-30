@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ConvertMetricUnits.API.Controllers
 {
     [ApiController]
-    [Route("api/v{version:apiVersion}/Temparture")]
+    [Route("api/v{version:apiVersion}/Temparature")]
     [Authorize]
     public class TemparatureController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace ConvertMetricUnits.API.Controllers
         }
 
 
-        [HttpGet("getTemparature")]
+        [HttpGet("GetTemparature")]
         public IActionResult GetTemparature([FromBody] TemparatureDto temparatureDto)
         {
             if (temparatureDto.Amount == 0)

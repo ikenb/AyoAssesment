@@ -40,6 +40,7 @@ builder.Services.AddAutoMapper(typeof(DtoMapper));
 builder.Services.AddScoped<ILengthRepository, LengthRepository>();
 builder.Services.AddScoped<IWeightRepository, WeightRepository>();
 builder.Services.AddScoped<ITemparatureRepository, TemparatureRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 builder.Services.AddControllers();

@@ -5,24 +5,25 @@ namespace ConvertMetricUnits.Core.Helpers
 {
     public static class LogHelper
     {
-        private static readonly ILogger logger;
+        private static readonly ILogger errorLog;
+        private static readonly ILogger usageLog;
 
-         static LogHelper()
+        static LogHelper()
         {
-             logger = new Logger();
+             errorLog = new ErrorLog();
+             usageLog= new UsageLog();
         }
-        public static void LogUsage(string userId, string userName)
+        public static void LogUsage(string userName)
         {
             var usageInfo = new LogDetail()
             {     
                 Timestamp = DateTime.Now,
-                UserId = userId,
                 UserName = userName,
                 MachineName = Environment.MachineName
                        
             };
 
-            logger.WriteLogs(usageInfo);
+            usageLog.WriteLogs(usageInfo);
         }
           
 
@@ -36,7 +37,7 @@ namespace ConvertMetricUnits.Core.Helpers
 
             };
 
-            logger.WriteLogs(errorInfo);
+            errorLog.WriteLogs(errorInfo);
         }
 
 
