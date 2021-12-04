@@ -4,7 +4,9 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Data;
+using System.Linq;
 
 namespace ConvertMetricUnits.Core.Repository
 {

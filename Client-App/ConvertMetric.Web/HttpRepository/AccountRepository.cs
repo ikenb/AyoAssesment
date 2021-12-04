@@ -1,7 +1,9 @@
 ﻿using ConvertMetric.Web.HttpRepository.Interfaces;
 using ConvertMetric.Web.Models;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ConvertMetric.Web.HttpRepository
 {

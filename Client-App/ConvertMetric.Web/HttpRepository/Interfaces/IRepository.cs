@@ -1,4 +1,7 @@
-﻿namespace ConvertMetric.Web.HttpRepository.Interfaces
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace ConvertMetric.Web.HttpRepository.Interfaces
 {
     public interface IRepository<T> where T : class
     {

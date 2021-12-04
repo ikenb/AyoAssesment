@@ -7,6 +7,8 @@ using Dapper;
 
 
 using System.Data;
+using System;
+using System.Linq;
 
 namespace ConvertMetricUnits.Core.Repository
 {

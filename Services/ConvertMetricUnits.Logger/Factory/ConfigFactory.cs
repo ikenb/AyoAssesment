@@ -1,6 +1,7 @@
 ﻿using LoggerService.Enums;
 using Serilog;
 using Serilog.Events;
+using System;
 using System.Diagnostics;
 
 namespace LoggerService.Factory
