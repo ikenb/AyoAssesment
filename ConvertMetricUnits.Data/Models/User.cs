@@ -13,12 +13,12 @@ namespace ConvertMetricUnits.Data.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public string? Username { get; set; }
+        public string Username { get; set; }
         [Required]
-        public string? Password { get; set; }
+        public string Password { get; set; }
         [Required]
-        public string? Role { get; set; }
+        public string Role { get; set; }
         [NotMapped]
-        public string? Token { get; set; }
+        public string Token { get; set; }
     }
 }
