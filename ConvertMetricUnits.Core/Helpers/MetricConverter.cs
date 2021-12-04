@@ -1,4 +1,6 @@
 ﻿using Jace;
+using System;
+using System.Collections.Generic;
 
 namespace ConvertMetricUnits.Core.Helpers
 {

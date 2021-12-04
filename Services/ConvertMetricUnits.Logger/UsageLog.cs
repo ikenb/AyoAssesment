@@ -3,6 +3,7 @@ using LoggerService.Factory;
 using LoggerService.Interfaces;
 using Serilog;
 using Serilog.Events;
+using System;
 using System.Diagnostics;
 
 namespace LoggerService

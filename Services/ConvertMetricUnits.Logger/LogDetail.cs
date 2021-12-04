@@ -1,4 +1,5 @@
 ﻿using LoggerService.Interfaces;
+using System;
 
 namespace LoggerService
 {
