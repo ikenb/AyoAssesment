@@ -7,9 +7,9 @@ namespace ConvertMetricUnits.Data.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Unit { get; set; }
+        public string Unit { get; set; }
         [Required]
         public int FormulaId { get; set; }
-        public Formula? Formula { get; set; }
+        public Formula Formula { get; set; }
     }
 }
