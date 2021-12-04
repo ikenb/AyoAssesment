@@ -15,6 +15,8 @@ namespace ConvertMetricUnits.Core.Repository
         private readonly IDbConnection _db;
         private readonly IDistributedCache _cache;
 
+        public string Formula { get; set; }
+
         public TemparatureRepository(IConfiguration configuration, IDistributedCache cache)
         {
             _db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
@@ -25,21 +27,21 @@ namespace ConvertMetricUnits.Core.Repository
             var converstionName = string.Concat(from, " to ", to);
             var parameter = DapperParameter.BuildDapperParameters(converstionName);
 
-            var recordKey = converstionName;
-            string formula;
+            //var recordKey = converstionName;
+            //string formula;
 
-            if (string.IsNullOrEmpty(_cache.GetString(recordKey)))
-            {
-                formula = GetTemparatureFormula(parameter);
+            //if (string.IsNullOrEmpty(_cache.GetString(recordKey)))
+            //{
+               Formula = GetTemparatureFormula(parameter);
 
-                _cache.SetString(recordKey, formula);
-            }
-            else
-            {
-                formula = _cache.GetString(recordKey);
-            }
+            //    _cache.SetString(recordKey, formula);
+            //}
+            //else
+            //{
+            //    formula = _cache.GetString(recordKey);
+            //}
 
-            return MetricConverter.ComputeMetric(from, amount, formula);
+            return MetricConverter.ComputeMetric(from, amount, Formula);
         }
 
         public string GetTemparatureFormula(DynamicParameters parameter)
@@ -50,7 +52,7 @@ namespace ConvertMetricUnits.Core.Repository
             }
             catch (Exception e)
             {
-                LogHelper.LogErrors(e);
+                //LogHelper.LogErrors(e);
                 return string.Empty;
             }
 

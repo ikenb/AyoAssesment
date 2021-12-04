@@ -27,19 +27,18 @@ namespace ConvertMetricUnits.Core.Repository
             var converstionName = string.Concat(from, " to ", to);
             var parameter = DapperParameter.BuildDapperParameters(converstionName);
 
-            var recordKey = converstionName;
-         
-
-            if (string.IsNullOrEmpty(_cache.GetString(recordKey)))
-            {
+            //var recordKey = converstionName;
+        
+            //if (string.IsNullOrEmpty(_cache.GetString(recordKey)))
+            //{
                 Formula = GetLengthFormula(parameter);
 
-                _cache.SetString(recordKey, Formula);
-            }
-            else
-            {
-                Formula = _cache.GetString(recordKey);
-            }
+               // _cache.SetString(recordKey, Formula);
+            //}
+            //else
+            //{
+            //    Formula = _cache.GetString(recordKey);
+            //}
 
             return MetricConverter.ComputeMetric(from, amount, Formula);       
         } 

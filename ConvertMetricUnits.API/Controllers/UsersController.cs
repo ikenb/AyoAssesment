@@ -29,11 +29,8 @@ namespace ConvertMetricUnits.API.Controllers
             
             if (user == null) 
                 return BadRequest(new { message = "Username or password is incorrect" });   
-            else
-                LogHelper.LogUsage(user.Username);
-            
-
-           
+            //else
+                //LogHelper.LogUsage(user.Username);
 
             return Ok(_mapper.Map<User>(user));
         }
@@ -46,8 +43,8 @@ namespace ConvertMetricUnits.API.Controllers
 
             if (!isUniqueUser)
                 return BadRequest(new { message = "Username already exists" });
-            else
-                LogHelper.LogUsage(userDto.Username);
+            //else
+               // LogHelper.LogUsage(userDto.Username);
             
             var user = _repository.Register(userDto.Username, userDto.Password, userDto.Role);
 
